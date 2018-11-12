@@ -1,5 +1,3 @@
-import roman
-
 print('\nzad 3.1')
 print('\nponizej poprawny weslug mnie kod')
 x, y = 2, 3
@@ -21,12 +19,14 @@ for i in line:
         print(i)
 #3.2
 print('\nzad3.2')
+"""
 L = [3, 5, 4] ; L = L.sort() #w porzadku jednak tablica nam sie nadpisze
 x, y = 1, 2, 3 #dwie zmienne trzy wartosci blad przypisania wartosci
 X = 1, 2, 3 ; X[1] = 4 #poniewaz jest to krotka to nie mozna uzywac na niej takiej operacji nie bedzie to dzialac
 X = [1, 2, 3] ; X[3] = 4 #indeksy liczone od zera wyjscie poza zakres
 X = "abc" ; X.append("d") #jest to string wiec taka funkcja nie zadziala
 map(pow, range(8)) # funkcja map przyjmuje dwa argumenty funkcja pow nie jest w tym przypadku argumentem
+"""
 #zad3.3
 print('\nzad 3.3')
 for i in range(31):
@@ -36,16 +36,15 @@ for i in range(31):
         print(i)
 #zad3.4
 print('\nzad 3.4')
-x = None
-while x != 'stop':
-    x = input('Prosze podac liczbe x: ')
-    if x.isnumeric():
-        x = float(x)
-        print('\noto para liczb x i jej trzecia potega\n')
-        print(x, x**3)
-    elif isinstance(x, str):
-        print('Blad! Prosze podac liczbe!')
-        continue
+while True:
+    x = input('podaj liczbe')
+    if x == 'stop':
+        break
+    try:
+        nx = float(x)
+        print('oto podana liczba i je trzecia potega: ',nx, nx**3)
+    except ValueError:
+        print('prosze podac liczbe!')
 #zad3.5
 print('zad 3.5')
 lenght = int(input('podaj dlugosc miarki'))
@@ -99,11 +98,16 @@ D = [[], [4], (1, 2), [3, 4], (5, 6, 7)]
 result = list(map(sum, D))
 print(result)
 #zad 3.10
-print('zad 3.10')
-rom = input("Podaj liczbe rzymska: ")
-ara = 0
-ara = roman.fromRoman(rom.upper())
-print("Liczba w postaci arabskiej: ", ara)
+D = dict(zip(['I', 'V', 'X', 'L', 'C', 'D', 'M'], [1, 5, 10, 50, 100, 500, 1000]));
+def roman2int(rzymska):
+    result = []
+    num = 0;
+    for i in rzymska: result.append(D[i])
+    for i, j in zip(result, result[1:]): num += i if i >= j else -i
+    return num + result.pop()
+
+liczba = input("Podaj liczbe rzymska ")
+print(roman2int(liczba))
 
 
 
