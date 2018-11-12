@@ -1,12 +1,12 @@
 from fractions import _gcd as gcd
 
+
 def add_frac(frac1, frac2):
     result = [0, 0]
-    tmp, tmp2 = [0, 0], [0,0]
     result[1] = frac1[1] * frac2[1] / gcd(frac1[1], frac2[1])
-    tmp[0] = result[1] / frac1[1] * frac1[0]
-    tmp2[0] = result[1] / frac2[1] * frac2[0]
-    result[0] = tmp[0] + tmp2[0]
+    tmp = result[1] / frac1[1] * frac1[0]
+    tmp2 = result[1] / frac2[1] * frac2[0]
+    result[0] = tmp + tmp2
     nwd = gcd(result[0], result[1])
     result[:] = [x / nwd for x in result]
     return result
@@ -14,11 +14,10 @@ def add_frac(frac1, frac2):
 
 def sub_frac(frac1, frac2):
     result = [0, 0]
-    tmp, tmp2 = [0, 0], [0,0]
     result[1] = frac1[1] * frac2[1] / gcd(frac1[1], frac2[1])
-    tmp[0] = result[1] / frac1[1] * frac1[0]
-    tmp2[0] = result[1] / frac2[1] * frac2[0]
-    result[0] = tmp[0] - tmp2[0]
+    tmp = result[1] / frac1[1] * frac1[0]
+    tmp2 = result[1] / frac2[1] * frac2[0]
+    result[0] = tmp - tmp2
     nwd = gcd(result[0], result[1])
     result[:] = [x / nwd for x in result]
     return result
@@ -42,7 +41,6 @@ def div_frac(frac1, frac2):
     return result
 
 
-
 def is_positive(frac):
     return False if (frac[0] < 0) ^ (frac[1] < 0) else True
 
@@ -63,7 +61,11 @@ def cmp_frac(frac1, frac2):
 def frac2float(frac):
     return float(frac[0]) / float(frac[1])
 
+a = [2,6]
+b = [3,7]
+print(add_frac(a,b))
 import unittest
+
 
 class TestFractions(unittest.TestCase):
 
@@ -75,7 +77,6 @@ class TestFractions(unittest.TestCase):
 
     def test_sub_frac(self):
         self.assertEqual(sub_frac([1, 2], [1, 3]), [1, 6])
-
 
     def test_mul_frac(self):
         self.assertEqual(mul_frac([1, 2], [1, 3]), [1, 6])
@@ -99,9 +100,4 @@ class TestFractions(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()     # uruchamia wszystkie testy
-
-
-
-
-
+    unittest.main()  # uruchamia wszystkie testy

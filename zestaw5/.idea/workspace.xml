@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9361b115-8b8a-47e4-8168-d47e2789f36d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/zestaw5.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/5.1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fracs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rekurencja.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zestaw3/zestaw3.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zestaw3/zestaw3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../zestaw4/4.5.py" beforeDir="false" afterPath="$PROJECT_DIR$/../zestaw4/4.5.py" afterDir="false" />
-    </list>
+    <list default="true" id="9361b115-8b8a-47e4-8168-d47e2789f36d" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +17,7 @@
     <session id="-2056116379">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.opened" value="2" />
@@ -277,7 +266,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26681128" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.26681128" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978093" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
