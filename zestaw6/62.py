@@ -36,7 +36,7 @@ class Point:
         return self.x * other.y - self.y * other.x
 
     def length(self):
-        return float(math.sqrt(self.x * self.x + self.y * self.y))
+        return int(math.sqrt(self.x * self.x + self.y * self.y))
 
 
 class TestPoint(unittest.TestCase):

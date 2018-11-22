@@ -32,7 +32,7 @@ class Frac:
         nwd = gcd(nfrac.x, nfrac.y)
         nfrac.x /= nwd
         nfrac.y /= nwd
-        return nfrac.__float__()
+        return nfrac
 
     # frac1 + frac2
 
@@ -45,7 +45,7 @@ class Frac:
         nwd = gcd(nfrac.x, nfrac.y)
         nfrac.x /= nwd
         nfrac.y /= nwd
-        return nfrac.__float__()
+        return nfrac
 
     # frac1 - frac2
 
@@ -56,7 +56,7 @@ class Frac:
         nwd = gcd(nfrac.x, nfrac.y)
         nfrac.x /= nwd
         nfrac.y /= nwd
-        return nfrac.__float__()
+        return nfrac
 
     # frac1 * frac2
 
@@ -67,7 +67,7 @@ class Frac:
         nwd = gcd(nfrac.x, nfrac.y)
         nfrac.x /= nwd
         nfrac.y /= nwd
-        return nfrac.__float__()
+        return nfrac
 
     # frac1 / frac2
 
@@ -111,16 +111,16 @@ class TestFrac(unittest.TestCase):
         self.assertEqual(str(Frac(4, 3)), 'Frac(4, 3)')
 
     def test_add(self):
-        self.assertEqual(Frac(2, 4) + Frac(3, 5), Frac(22.0, 20.0))
+        self.assertEqual(Frac(2, 4) + Frac(3, 5), Frac(22, 20))
 
     def test_sub(self):
-        self.assertEqual(Frac(2, 3) - Frac(3, 4), Frac(-1.0, 12.0))
+        self.assertEqual(Frac(2, 3) - Frac(3, 4), Frac(-1, 12))
 
     def test_mul(self):
-        self.assertEqual(Frac(3, 8) * Frac(6, 4), Frac(18.0, 32.0))
+        self.assertEqual(Frac(3, 8) * Frac(6, 4), Frac(18, 32))
 
     def test_div(self):
-        self.assertEqual(Frac(2, 3) / Frac(3, 5), Frac(10.0, 9.0))
+        self.assertEqual(Frac(2, 3) / Frac(3, 5), Frac(10, 9))
 
     def test_neg(self):
         self.assertEqual(Frac(3, 2), Frac(-3, 2))
