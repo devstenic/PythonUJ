@@ -92,9 +92,7 @@ class Frac:
     # cmp(frac1, frac2)
 
     def __float__(self):
-        self.x = float(self.x)
-        self.y = float(self.y)
-        return self
+        return float(self.x) / float(self.y)
     # float(frac)
 
 
@@ -123,16 +121,16 @@ class TestFrac(unittest.TestCase):
         self.assertEqual(Frac(2, 3) / Frac(3, 5), Frac(10, 9))
 
     def test_neg(self):
-        self.assertEqual(Frac(3, 2), Frac(-3, 2))
+        self.assertEqual(-Frac(3, 2), Frac(-3, 2))
 
     def test_invert(self):
-        self.assertEqual(Frac(4, 5), Frac(5, 4))
+        self.assertEqual(~Frac(4, 5), Frac(5, 4))
 
     def test_cmp(self):
         self.assertEqual(Frac(3, 4), Frac(2, 3), 1)
 
     def test_float(self):
-        self.assertEqual(Frac(3, 5), Frac(3.0, 5.0))
+        self.assertEqual(float(Frac(3, 5)), 0.6)
 
 
 if __name__ == '__main__':
