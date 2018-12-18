@@ -15,8 +15,7 @@ class Point:
         return 'Point(' + str(self.x) + ', ' + str(self.y) + ')'
 
     def __eq__(self, other):
-        x = bool(self.x == other.x and self.y == other.y)
-        return bool
+        return True if self.x == other.x and self.y == other.y else False
 
     def __ne__(self, other):
         return not self == other
@@ -36,7 +35,7 @@ class Point:
         return self.x * other.y - self.y * other.x
 
     def length(self):
-        return int(math.sqrt(self.x * self.x + self.y * self.y))
+        return math.sqrt(self.x * self.x + self.y * self.y)
 
 
 class TestPoint(unittest.TestCase):
