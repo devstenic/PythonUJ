@@ -1,8 +1,8 @@
-node = [2,4,32,4,2,5,7]
+node = [2,4,32,4,2,5,7,3,2,21]
 
 
 def remove_head(node):
-    if node.len() == 0:
+    if len(node) == 0:
         raise Exception('lista jest pusta!')
     else:
         node.pop(0)
@@ -10,7 +10,7 @@ def remove_head(node):
     return node
 
 def remove_tail(node):
-    if node.len() == 0:
+    if len(node) == 0:
         raise Exception('lista jest pusta!')
     else:
         node.pop(-1)
@@ -19,3 +19,5 @@ def remove_tail(node):
 
 # Zastosowanie.
 print(node)
+print(remove_head(node))
+print(remove_tail(node))

@@ -24,11 +24,13 @@ class RandomQueue:
     def remove(self):
         if self.is_empty():
             raise ValueError('kolejka pusta!')
-        r = random.randrange(self.head, self.tail, 1)
+        r = random.randint(self.head, (self.tail-1))
         data = self.items[r]
-        self.items[r] = None      # usuwam referencję
-        self.items = list(filter(None, self.items))
-        self.tail = len(self.items)
+        hv = self.items[self.head]
+        self.items[self.head] = self.items[r]
+        self.items[r] = hv
+        self.items[self.head] = None
+        self.head = (self.head + 1) % self.n
         return data
 
 test = RandomQueue()
