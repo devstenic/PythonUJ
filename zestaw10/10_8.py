@@ -4,40 +4,44 @@ import random
 class RandomQueue:
 
     def __init__(self, size=5):
-        self.n = size + 1         # faktyczny rozmiar tablicy
-        self.items = self.n * [None]
-        self.head = 0           # pierwszy do pobrania
-        self.tail = 0           # pierwsze wolne
+        self.queueS = set(x for x in range(size))
+        self.queueFill = set()
+        self.values = size * [None]
 
-    def is_empty(self):
-        return self.head == self.tail
-
-    def is_full(self):
-        return (self.head + self.n-1) % self.n == self.tail
-
-    def insert(self, data):
+    def insert(self, item):
         if self.is_full():
-            raise ValueError('kolejka pełna!')
-        self.items[self.tail] = data
-        self.tail = (self.tail + 1) % self.n
+            raise Exception("Nie mozesz dodac elementu kolejka pelna!")
+
+        x = random.sample(self.queueS, 1)[0]
+
+        self.values[x] = item
+        self.queueFill.add(x)
+        self.queueS.remove(x)
 
     def remove(self):
         if self.is_empty():
-            raise ValueError('kolejka pusta!')
-        r = random.randint(self.head, (self.tail-1))
-        data = self.items[r]
-        hv = self.items[self.head]
-        self.items[self.head] = self.items[r]
-        self.items[r] = hv
-        self.items[self.head] = None
-        self.head = (self.head + 1) % self.n
+            raise Exception("Kolejka pusta!")
+
+        x = random.sample(self.queueFill, 1)[0]
+
+        data = self.values[x]
+        self.values[x] = None
+        self.queueS.add(x)
+        self.queueFill.remove(x)
+
         return data
 
-test = RandomQueue()
+    def is_empty(self):
+        return len(self.queueFill) == 0
 
-test.insert(1)
-test.insert(2)
+    def is_full(self):
+        return len(self.queueS) == 0
+
+
+test = RandomQueue()
 test.insert(3)
-test.insert(4)
-test.insert(5)
+test.insert(23)
+test.insert(31)
+test.insert(33)
+test.insert(43)
 print(test.remove())
