@@ -202,7 +202,3 @@ class Graph:
         return newGraph
     # zwraca podgraf indukowany
 
-
-test = Graph(4)
-test.add_edge(Edge(2,3))
-test.__repr__()
