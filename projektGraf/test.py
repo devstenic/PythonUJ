@@ -84,21 +84,17 @@ class TestGraph(unittest.TestCase):
 
     def test_add_edge(self):
         self.dGraph.add_edge(Edge(3, 4, 5))
-        with self.assertRaises(ValueError):
-            self.dGraph.has_edge(Edge(186, 6, 5))
         self.assertFalse(self.dGraph.has_edge(Edge(3, 5, 5)))
         self.assertTrue(self.dGraph.has_edge(Edge(3, 4)))
 
         self.uGraph.add_edge(Edge(3, 4, 5))
-        with self.assertRaises(ValueError):
-            self.uGraph.has_edge(Edge(186, 6, 5))
         self.assertTrue(self.uGraph.has_edge(Edge(4, 3, 5)))
         self.assertTrue(self.uGraph.has_edge(Edge(4, 3)))
 
     def test_has_edge(self):
         self.assertTrue(self.dGraph.has_edge(Edge(2, 5)))
         self.assertFalse(self.dGraph.has_edge(Edge(10, 1)))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(IndexError):
             self.dGraph.has_edge(Edge(40, 8))
 
     def test_del_edge(self):
@@ -114,13 +110,13 @@ class TestGraph(unittest.TestCase):
         self.assertTrue(self.uGraph.has_edge(Edge(12, 5)))
         self.uGraph.del_edge(Edge(5, 12))
         self.assertEqual(False, self.uGraph.has_edge(Edge(5, 12)))
-        self.assertTrue(self.uGraph.has_edge(Edge(12, 5)))
+        self.assertFalse(self.uGraph.has_edge(Edge(12, 5)))
 
     def test_weight(self):
         self.assertEqual(7, self.dGraph.weight(Edge(2, 6)))
         self.assertEqual(None, self.dGraph.weight(Edge(0, 6,)))
         self.assertEqual(11, self.dGraph.weight(Edge(4, 10)))
-        with self.assertRaises(ValueError):
+        with self.assertRaises(IndexError):
             self.dGraph.weight(Edge(1111, 6))
 
 # Tu Ci zmieniłem :D

@@ -93,23 +93,23 @@ uGraph.subgraph([3,4]).__repr__()
 print('\n')
 
 
-print('Dopelnienie grafu skierowanego: ')
-print('\n Reprezentacja po operacji: \n')
-dGraph.complement().__repr__()
-print('Dopelnienie grafu nieskierowanego: ')
-print('\n Reprezentacja po operacji: \n')
-uGraph.complement().__repr__()
-
-
-print('\n')
-
-
-print('Transpozycja grafu skierowanego: ')
-print('\n Reprezentacja po operacji: \n')
-dGraph.transpose().__repr__()
-print('Transpozycja grafu nieskierowanego: ')
-print('\n Reprezentacja po operacji: \n')
-uGraph.transpose().__repr__()
+# print('Dopelnienie grafu skierowanego: ')
+# print('\n Reprezentacja po operacji: \n')
+# dGraph.complement().__repr__()
+# print('Dopelnienie grafu nieskierowanego: ')
+# print('\n Reprezentacja po operacji: \n')
+# uGraph.complement().__repr__()
+#
+#
+# print('\n')
+#
+#
+# print('Transpozycja grafu skierowanego: ')
+# print('\n Reprezentacja po operacji: \n')
+# dGraph.transpose().__repr__()
+# print('Transpozycja grafu nieskierowanego: ')
+# print('\n Reprezentacja po operacji: \n')
+# uGraph.transpose().__repr__()
 
 
 
@@ -173,12 +173,5 @@ print([node for node in dGraph if not dGraph[node]])
 print(sorted(len(uGraph[node]) for node in uGraph))
 # posortowana lista stopni wierzcholkow grafu nieskierowanego
 
-dGraph.traverse_dfs(2)
-for i in dGraph.iter_dfs(2):
-    print(i)
 
-dGraph.traverse_bfs(2)
-for i in dGraph.iter_bfs(2):
-    print(i)
 
-dGraph.__repr__()

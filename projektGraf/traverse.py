@@ -1,7 +1,8 @@
 import queue
 
 
-def visit(node):  # pewna operacja na wierzchołku
+def visit(node):
+    """Pewna operacja na wierzchołku"""
     print('odwiedzamy', node)
 
 
@@ -33,7 +34,7 @@ def traverse_bfs(graph, start, visit):
 
 
 def traverse_stack(graph, start, visit):
-    # Przechodzenie w głąb z jawnym stosem.
+    """Przechodzenie w głąb z jawnym stosem"""
     stack = queue.LifoQueue()
     visited = []
     stack.put(start)
